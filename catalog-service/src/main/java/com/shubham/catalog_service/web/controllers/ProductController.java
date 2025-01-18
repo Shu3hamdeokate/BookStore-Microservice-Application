@@ -27,7 +27,7 @@ public class ProductController {
 
     @GetMapping("/{code}")
     ResponseEntity<Product> getProduct(@PathVariable String code) {
-        log.info("Fetching product with code: {}", code);
+        log.info("Fetching product with code no: {}", code);
         return productService.getProduct(code).map(ResponseEntity::ok)
                 .orElseThrow(() ->ProductNotFoundException.forCode(code));
     }
